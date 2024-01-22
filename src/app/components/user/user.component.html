@@ -1,0 +1,17 @@
+<p>user yo! {{username}}, you are a {{ occupation }}</p>
+@if (doesUserExist) {
+    <p>Felicitaciones si existes :D </p>
+}@else {
+    <p>Lo siento, no existes</p>
+}
+
+
+<h2>Hola operadora</h2>
+<ul>
+    @for(os of operatingSystem; track os.id){
+        <li (mouseover)="onMouserOver(os.name)">{{os.name | uppercase}}</li>
+    }
+</ul>
+
+<div class="editable-div" [contentEditable]="isEditable"></div>
+<button (click)="emitToParent()">Mensaje al papa</button>

@@ -1,0 +1,24 @@
+<section>
+    <form>
+        <label for="framwork">
+            Favorite framwork:
+            <input id="framework" type="text" [(ngModel)] ="favoriteFramework" [ngModelOptions]="{standalone: true}" />
+        </label>
+    </form>
+    {{favoriteFramework}}
+</section>
+
+<section>
+    <h1>Reactive form</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="handleContactFormSubmit()">
+        <label for="name">
+            Name:
+            <input id="name" type="text" formControlName="name" />
+        </label>
+        <label for="email">
+            Email:
+            <input id="email" type="text" formControlName="email" />
+        </label>
+       <button [disabled]="!contactForm.valid" type="submit">Submit</button>
+    </form>
+</section>
